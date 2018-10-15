@@ -1,7 +1,7 @@
 # 微信小程序
 ```
 ├─pages
-│  ├─face                   //百度AI人脸识别
+│  ├─face                   //调用百度AI人脸识别
 │  ├─index
 │  ├─logs
 │  └─request
