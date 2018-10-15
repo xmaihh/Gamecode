@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wxd5fa834ff5e50b11",
+	"appid": "你的微信小程序appid",
 	"projectname": "AIface",
 	"debugOptions": {
 		"hidedInDevtools": []

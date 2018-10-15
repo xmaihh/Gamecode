@@ -2,6 +2,7 @@
 [Dd]esktop.ini
 Thumbs.db
 $RECYCLE.BIN/
+project.config-real.json
 
 # macOS
 .DS_Store
