@@ -6,7 +6,6 @@
 
 .container{
   margin-top:-110px;
-  /* background-image:url("https://www.xsshome.cn/timg.jpg"); */
   background-repeat: no-repeat;
   background-size: auto;
   background-position:bottom;

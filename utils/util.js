@@ -17,3 +17,15 @@ const formatNumber = n => {
 module.exports = {
   formatTime: formatTime
 }
+
+
+/**
+ * The exports variable that is available within a module starts  
+ */
+var getBase64Image = require("./src/getBase64Image");
+var checkOrientation = require("./src/checkOrientation");
+
+module.exports = {
+  getBase64Image,
+  checkOrientation
+};

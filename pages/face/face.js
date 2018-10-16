@@ -141,27 +141,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-    return {
-      title: '人脸属性',
-      path: '/pages/face/face',
-      success: function(res) {
-        if (res.errMsg == 'shareAppMessage:ok') {
-          wx.showToast({
-            title: '分享成功',
-            icon: 'success',
-            duration: 500
-          });
-        }
-      },
-      fail: function(res) {
-        if (res.errMsg == 'shareAppMessage:fail cancel') {
-          wx.showToast({
-            title: '分享取消',
-            icon: 'loading',
-            duration: 500
-          })
-        }
-      }
-    }
+    
   }
 })

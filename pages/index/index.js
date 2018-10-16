@@ -15,6 +15,15 @@ Page({
       url: '../logs/logs'
     })
   },
+
+// 跳转函数
+bindbase64:function(){
+  wx.navigateTo({
+    url: '../base64/base64',
+  })
+},
+
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
