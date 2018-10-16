@@ -1,16 +1,18 @@
 /* pages/base64/base64.wxss */
+
 .btn-area {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .upload {
   color: rgb(255, 255, 255);
-  font-size: 16px;
+  font-size: 20px;
   font-family: 微软雅黑;
-  width: 100px;
-  height: 25px;
+  width: 200px;
+  height: 50px;
   vertical-align: left;
   text-align: center;
   line-height: 45px;
@@ -22,12 +24,12 @@
 
 .process {
   color: rgb(255, 255, 255);
-  font-size: 16px;
+  font-size: 20px;
   font-family: 微软雅黑;
-  width: 100px;
-  margin-right: 25px;
+  width: 200px;
+  margin-right: 20px;
   /* position: fixed; */
-  height: 25px;
+  height: 50px;
   vertical-align: right;
   text-align: center;
   line-height: 45px;

@@ -1,5 +1,5 @@
 // pages/base64/base64.js
-const util = require('../../utils/util.js')
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -52,7 +52,7 @@ Page({
    * 图片大小裁剪
    */
   imageReponseToBox: function(e) {
-    var imageSize = {};
+    var imageSize = { };
     var originalWidth = e.detail.width; // 图片原始宽
     var originalHeight = e.detail.height; // 图片原始高
     var originalScale = originalHeight / originalWidth; //   图片高宽比
@@ -68,7 +68,7 @@ Page({
         console.log('windowHeight: ' + windowHeight);
         if (originalScale < windowScale) { // 图片宽高比小于屏幕宽高比 
           // 图片缩放后的宽为屏幕宽
-          imageSize.imgeWidth = windowHeight;
+          imageSize.imageWidth = windowHeight;
           imageSize.imageHeight = (windowWidth * originalHeight) / originalWidth;
         } else { // 图片高宽比大于屏幕高宽比
           imageSize.imageHeight = windowHeight;
@@ -81,7 +81,8 @@ Page({
     return imageSize;
   },
   imageLoad:function(e){
-    var imageSize = this.imageReponseToBox(e)
+    var imageSize = this.imageReponseToBox(e);
+    console.log('imageWidth'+imageSize.imageWidth)
     this.setData({
       imageWidth:imageSize.imageWidth,
       imageHeight:imageSize.imageHeight
