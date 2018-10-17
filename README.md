@@ -20,4 +20,5 @@
 
 ## 百度AI开放平台之人脸检测与属性分析
 [接口文档](https://ai.baidu.com/docs#/Face-Detect-V3/top)
-![效果图]()
+
+![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png)
