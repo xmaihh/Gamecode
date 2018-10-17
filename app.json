@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/face/face",
     "pages/index/index",
     "pages/logs/logs",
     "pages/base64/base64"

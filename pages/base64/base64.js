@@ -52,7 +52,7 @@ Page({
    * 图片大小裁剪
    */
   imageReponseToBox: function(e) {
-    var imageSize = { };
+    var imageSize = {};
     var originalWidth = e.detail.width; // 图片原始宽
     var originalHeight = e.detail.height; // 图片原始高
     var originalScale = originalHeight / originalWidth; //   图片高宽比
@@ -80,21 +80,27 @@ Page({
     console.log('缩放后的高: ' + imageSize.imageHeight)
     return imageSize;
   },
-  imageLoad:function(e){
+  imageLoad: function(e) {
     var imageSize = this.imageReponseToBox(e);
-    console.log('imageWidth'+imageSize.imageWidth)
+    console.log('imageWidth' + imageSize.imageWidth)
     this.setData({
-      imageWidth:imageSize.imageWidth,
-      imageHeight:imageSize.imageHeight
+      imageWidth: imageSize.imageWidth,
+      imageHeight: imageSize.imageHeight
     })
   },
-  processImage:function(){
+  processImage: function() {
     var _this = this;
-    util.getBase64Image('myCanvas',this.data.imgUrl,function(data){
-        _this.setData({
-          base64:data
+    util.getBase64Image('myCanvas', this.data.imgUrl, function(data) {
+      _this.setData({
+          base64: data
         }),
-        console.log("base64编码: "+data)
+        console.log("base64编码: " + data)
+      wx.showToast({
+        title: '成功',
+        icon: 'succes',
+        duration: 1000,
+        mask: true
+      })
     })
   },
 
