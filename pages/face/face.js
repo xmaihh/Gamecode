@@ -38,21 +38,36 @@ Page({
             title: "分析中...",
             mask: true
           }),
-          // 请求图片的base64编码 start
-          wx.request({
-            url: _this.data.img,
-            method: 'GET',
-            responseType: 'arraybuffer',
-            success: function(res) {
-              var base64 = wx.arrayBufferToBase64(res.data);
+          // 请求图片的base64编码 start    方法:此方法在真机演示无法通过 error:request:fail invalid url "wxfile://tmp_6e6f62c304dbddb0a0e2d965a5f7ee490fb61d20182b07f5.jpg"
+          /**  wx.request({
+              url: _this.data.img,
+              method: 'GET',
+              responseType: 'arraybuffer',
+              success: function(res) {
+                var base64 = wx.arrayBufferToBase64(res.data);
+                _this.setData({
+                  base64: base64,
+                })*/
+          // 请求图片的base64编码 end
+
+          wx.getFileSystemManager().readFile({
+            filePath: _this.data.img, // 选择图片返回的相对路径
+            encoding: 'base64', //编码格式
+            success: res => {
+              // console.log('data:image/png;base64,' + res.data)
               _this.setData({
-                base64: base64,
+                base64: res.data,
               })
-              // 请求图片的base64编码 end
-              console.log(_this.data.img + "\n");
+              //   }
+              // })
+
+
+
+
+              /**console.log(_this.data.img + "\n");
               console.log(_this.data.base64 + "\n");
               console.log(_this.data.access_token + "\n");
-              console.log(host.getBaiduAIHost() + '?access_token=' + _this.data.access_token + "\n");
+              console.log(host.getBaiduAIHost() + '?access_token=' + _this.data.access_token + "\n");*/
               // 请求baidu人脸识别接口 start
               wx.request({
                 url: host.getBaiduAIHost() + '?access_token=' + _this.data.access_token,
@@ -69,7 +84,7 @@ Page({
                 method: "POST",
                 success(res) {
                   wx.hideLoading();
-                  console.log(res.data);
+                  // console.log(res.data);
                   var data = res.data;
                   // var str = JSON.parse(data);
                   // 请求baidu人脸识别接口 end
@@ -118,7 +133,7 @@ Page({
                       duration: 1000,
                       mask: true
                     })
-                    console.log(data.error_msg);
+                    // console.log(data.error_msg);
                   }
                 }
               })
@@ -149,13 +164,13 @@ Page({
       },
       method: "POST",
       success(res) {
-        console.log(res.data);
+        // console.log(res.data);
         // var data = res.data;   // 返回数据已经是json
         // var str = JSON.parse(data);
         _this.setData({
           access_token: res.data.access_token,
         })
-        console.log(res.data.access_token)
+        // console.log(res.data.access_token)
       }
     })
     // 请求token end
