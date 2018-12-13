@@ -51,4 +51,4 @@
 ![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png)
 
 ## 经典飞机打战
-![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.png)
+<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.png" width="270" height="480" alt="演示效果"/>
