@@ -50,4 +50,5 @@
 
 ![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png)
 
-## 微信经典飞机打战
+## 经典飞机打战
+![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.png)
