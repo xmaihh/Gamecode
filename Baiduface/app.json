@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/face/face",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/base64/base64"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
