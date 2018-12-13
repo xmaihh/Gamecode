@@ -48,7 +48,7 @@
 ## 百度AI开放平台之人脸检测与属性分析
 [接口文档](https://ai.baidu.com/docs#/Face-Detect-V3/top)
 
-![效果图](https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png)
+<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png" width="270" height="480" alt="演示效果"/>
 
 ## 经典飞机打战
-<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.png" width="270" height="480" alt="演示效果"/>
+<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.jpg" width="270" height="480" alt="演示效果"/>
