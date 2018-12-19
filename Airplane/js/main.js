@@ -29,11 +29,11 @@ export default class Main {
     this.bindloopRender = this.loopRender.bind(this)
 
     //2.不需重置的游戏数据、玩家操控处理机制
-    ;//<--编译器BUG，不加";"会和下一语句拼成一句而出错
+    ; //<--编译器BUG，不加";"会和下一语句拼成一句而出错
     ['touchstart', 'touchmove', 'touchend'].forEach((type) => {
       canvas.addEventListener(type, this.touchEventHandler.bind(this))
-    })
-    ;['UpdateRate', 'CtrlLayers.Background.DefaultActive', 'GodMode']
+    });
+    ['UpdateRate', 'CtrlLayers.Background.DefaultActive', 'GodMode']
     .forEach(propName => {
       Config.subscribe(propName, this.onConfigChanged.bind(this))
     })
@@ -47,7 +47,7 @@ export default class Main {
       wx.updateShareMenu({
         withShareTicket: true
       })
-      wx.onShareAppMessage(function () {
+      wx.onShareAppMessage(function() {
         return {
           title: '飞机打战',
           imageUrl: canvas.toTempFilePathSync({
@@ -84,9 +84,9 @@ export default class Main {
     this.music = new Music()
     this.ctrlLayerUI = new ControlLayer('UI', [this.gameinfo])
     this.ctrlLayerSprites = new ControlLayer('Sprites', [this.player])
-    this.ctrlLayerBackground = new ControlLayer('Background', [this.bg], 
-        Config.CtrlLayers.Background.DefaultActive)  //this.CtrlLayers.Background.DefaultActive)
-    
+    this.ctrlLayerBackground = new ControlLayer('Background', [this.bg],
+      Config.CtrlLayers.Background.DefaultActive) //this.CtrlLayers.Background.DefaultActive)
+
     //2.两个主循环重启
     if (this.updateTimer)
       clearInterval(this.updateTimer)
@@ -122,8 +122,8 @@ export default class Main {
    * 帧数取模定义成生成的频率
    */
   enemyGenerate() {
-    if ((this.updateTimes * Constants.Enemy.SpawnRate) % Config.UpdateRate
-      < Constants.Enemy.SpawnRate) {
+    if ((this.updateTimes * Constants.Enemy.SpawnRate) % Config.UpdateRate <
+      Constants.Enemy.SpawnRate) {
       let enemy = databus.pool.getItemByClass('enemy', Enemy)
       enemy.init(Constants.Enemy.Speed)
       databus.enemys.push(enemy)
@@ -132,9 +132,9 @@ export default class Main {
 
   //漂浮物生成逻辑
   floatageGenerate() {
-    if ((this.updateTimes * Constants.Floatage.SpawnRate) % Config.UpdateRate
-      < Constants.Floatage.SpawnRate
-      && databus.floatages.length < Constants.Floatage.SpawnMax) {
+    if ((this.updateTimes * Constants.Floatage.SpawnRate) % Config.UpdateRate <
+      Constants.Floatage.SpawnRate &&
+      databus.floatages.length < Constants.Floatage.SpawnMax) {
       let floatage = databus.pool.getItemByClass('floatage', Floatage)
       floatage.init(Constants.Floatage.Speed)
       databus.floatages.push(floatage)
@@ -143,11 +143,11 @@ export default class Main {
 
   //运输机生成逻辑
   freighterGenerate() {
-    if ((this.updateTimes * Constants.Freighter.SpawnRate) % Config.UpdateRate
-      < Constants.Freighter.SpawnRate) {
+    if ((this.updateTimes * Constants.Freighter.SpawnRate) % Config.UpdateRate <
+      Constants.Freighter.SpawnRate) {
       let freighter = databus.pool.getItemByClass('freighter', Freighter)
       freighter.init(Constants.Freighter.Speed)
-      databus.enemys.push(freighter)  //freighter is an enemy
+      databus.enemys.push(freighter) //freighter is an enemy
     }
   }
 
@@ -171,7 +171,7 @@ export default class Main {
       }
     })
 
-    databus.floatages.forEach( floatage => {
+    databus.floatages.forEach(floatage => {
       if (this.player.isCollideWith(floatage)) {
         floatage.dispose()
         Config.Bullet.Type = Util.findNext(Constants.Bullet.Types, Config.Bullet.Type)
@@ -182,7 +182,7 @@ export default class Main {
       }
     })
 
-    if (!Config.GodMode){
+    if (!Config.GodMode) {
       for (let i = 0, il = databus.enemys.length; i < il; i++) {
         let enemy = databus.enemys[i]
 
@@ -196,10 +196,9 @@ export default class Main {
   }
 
   //-- 游戏【操控】事件处理 ----
-  touchEventHandler(e){
+  touchEventHandler(e) {
     e.preventDefault()
-    let [x, y] = (e.type == 'touchstart' || e.type == 'touchmove') ?
-      [e.touches[0].clientX, e.touches[0].clientY] : [null, null]
+    let [x, y] = (e.type == 'touchstart' || e.type == 'touchmove') ? [e.touches[0].clientX, e.touches[0].clientY] : [null, null]
 
     //规则：1.只会从上层往下层传(只有捕获capture，没有冒泡bubble) 
     //     2.当上层发生过处理时下层不再处理(parent-catch)
@@ -225,7 +224,7 @@ export default class Main {
             case 'resume':
               this.resume()
               break
-            //--- Setting Commands ---
+              //--- Setting Commands ---
             case 'switchUpdateRate':
               Config.UpdateRate = Util.findNext(res.optionList, Config.UpdateRate)
               break
@@ -242,7 +241,7 @@ export default class Main {
               Config.CtrlLayers.Background.DefaultActive = Util.findNext(res.optionList, Config.CtrlLayers.Background.DefaultActive)
               break
           }
-          if (res.message.length > 0){
+          if (res.message.length > 0) {
             upperLayerHandled = true
             return true //if any element handled the event, stop iteration
           }
@@ -274,8 +273,8 @@ export default class Main {
     this.collisionDetection()
 
     //即使GameOver仍可能发最后一颗子弹..仇恨的子弹..
-    if ((this.updateTimes * Constants.Bullet.SpawnRate) % Config.UpdateRate
-       < Constants.Bullet.SpawnRate) {
+    if ((this.updateTimes * Constants.Bullet.SpawnRate) % Config.UpdateRate <
+      Constants.Bullet.SpawnRate) {
       this.player.shoot()
       this.music.playShoot()
     }
@@ -287,9 +286,9 @@ export default class Main {
     }
   }
 
-  onConfigChanged(key, value, oldValue){
+  onConfigChanged(key, value, oldValue) {
     console.log(`Main::onConfigChanged: ${key}=${value}`)
-    switch (key){
+    switch (key) {
       case 'UpdateRate':
         this.updateInterval = 1000 / Config.UpdateRate
         if (this.updateTimer)
@@ -336,14 +335,20 @@ export default class Main {
     // 游戏结束停止帧循环
     if (databus.gameStatus == DataBus.GameOver) {
       this.gameinfo.renderGameOver(ctx, databus.score)
+
+      // 123456 Rank
+      let openDataContext = wx.getOpenDataContext();
+      openDataContext.postMessage({
+        key: 'score',
+        value: databus.score
+      });
     }
   }
-
 
   //-- 游戏数据【更新】主循环 ----
   loopUpdate() {
     this.updateTimes++
-    let timeElapsed = new Date().getTime() - this.lastRenderTime
+      let timeElapsed = new Date().getTime() - this.lastRenderTime
     this.lastRenderTime = new Date().getTime()
     this.update(timeElapsed)
   }

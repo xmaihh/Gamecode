@@ -9,8 +9,8 @@
 		"nodeModules": true
 	},
 	"compileType": "game",
-	"libVersion": "1.9.94",
-	"appid": "这里配置你的appid",
+	"libVersion": "2.4.2",
+	"appid": "wx0701935af0f7d5f1",
 	"projectname": "airplane",
 	"condition": {
 		"search": {
