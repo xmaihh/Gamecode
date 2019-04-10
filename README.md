@@ -46,17 +46,22 @@
 ```
 
 ## 百度AI开放平台之人脸检测与属性分析 (扫码体验)
+
 [接口文档](https://ai.baidu.com/docs#/Face-Detect-V3/top)
 <figure class="half">
-	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png" width="270" height="480" alt="演示效果"/><img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_baiduface.png" width="270"  alt="扫码体验"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/baiduai_face.png" width="270" height="480" alt="演示效果"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_baiduface.png" width="270"  alt="扫码体验"/>
 </figure>
 
 ## 经典飞机打战 (扫码体验)
+
 <figure class="half">
-	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.jpg" width="270" height="480" alt="演示效果"/><img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_airplane.png" width="270"  alt="扫码体验"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.jpg" width="270" height="480" alt="演示效果"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_airplane.png" width="270"  alt="扫码体验"/>
 </figure>
 
 ## 贪吃蛇 (扫码体验)
 <figure class="half">
-	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/snake.png" width="270" height="480" alt="演示效果"/><img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_snake.png" width="270"  alt="扫码体验"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/snake.png" width="270" height="480" alt="演示效果"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_snake.png" width="270"  alt="扫码体验"/>
 </figure>

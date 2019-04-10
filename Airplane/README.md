@@ -2,7 +2,7 @@
 
 ## 源码目录介绍
 
-```
+```shell
 // Baiduface
 
 ./js
@@ -26,3 +26,9 @@
 └── main.js                                // 游戏入口主函数
 
 ```
+
+
+<figure class="half">
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/airplane.jpg" width="270" height="480" alt="演示效果"/>
+	<img src="https://github.com/xmaihh/weixinxiaochengxu/raw/master/arts/qr_airplane.png" width="270"  alt="扫码体验"/>
+</figure>
