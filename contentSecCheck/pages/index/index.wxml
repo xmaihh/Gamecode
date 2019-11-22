@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="img_wrap" bindtap="chooseImage">
+    <image src="{{ img }}" mode='aspectFit' />
+    <cover-view class="code {{colorful}}">{{code}}</cover-view>
+  </view>
+  <view class="content">
+    <textarea auto-focus="true" maxlength="200" bindinput="textareaCtrl" placeholder-style="color:#999;" placeholder="Enter your feedback here." />
+    <view class='fontNum'>{{msg.length}}/200</view>
+  </view>
+  <button bindtap="uploads" class="up">Submit</button>
+</view>
